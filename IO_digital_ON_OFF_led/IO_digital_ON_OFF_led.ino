@@ -8,7 +8,7 @@
    Proyecto: Entradas y salidas digitales - Control del encendido y apagado de un led
    Dev: Profe. Alejandro Lopez Navas
    Fecha: 17 de abril
-   link de la simulacion: https://www.tinkercad.com/things/4KZoYYTZSyp-fabulous-sango/editel?sharecode=uCfRswAmDkGT0GWHqphohHylUVSDb_qFUbo3d6bn3sY
+   link de la simulacion: https://www.tinkercad.com/things/4KZoYYTZSyp-entradas-y-salidas-digitales-onoffled
 */
 
 
