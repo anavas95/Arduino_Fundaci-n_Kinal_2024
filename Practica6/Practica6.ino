@@ -64,7 +64,7 @@ const int unlock_pos = 90;          //posicion de 90 grados para indicar que la 
 
 
 //Variables donde almacenare las contraseñas
-String contrasenaCerradura = "20210139";   //Variable donde almaceno la contraseña definida por el sistema
+String contrasenaCerradura = "20210139*";   //Variable donde almaceno la contraseña definida por el sistema
 String info_recibida = "";                //Variable donde voy a ir guardando los caracteres que ingreso por medio del teclado
 
 //variables auxiliares
@@ -91,9 +91,12 @@ void setup()
   config_outputs();               //Realizo las configuraciones de los pines de salida
   config_HMI();                   //configuro e inicializo la pantalla LCD y el servomotor
   ON(led_amar);                   //enciendo el led amarillo
-  ON(led_rojo);
-  OFF(led_verd);
+  ON(led_rojo);                   //enciendo el led rojo
+  OFF(led_verd);                  //enciendo el led verde}
+  ServoCerradura.write(0);
+
 }
+
 
 
 void loop()
@@ -113,14 +116,16 @@ void loop()
     {
       lcdCerradura.setCursor(0,1);
       lcdCerradura.print("               ");
-
+      Serial.println(info_recibida);
       if(info_recibida == contrasenaCerradura)
       {
         lcdCerradura.setCursor(0,1);
         lcdCerradura.print("Contrasena correcta");
+        ServoCerradura.write(90);
         delay(1000);
+        ServoCerradura.write(0);
         lcdCerradura.setCursor(0,1);
-        lcdCerradura.print("P.Abierta      ");
+        lcdCerradura.print("P.Abierta          ");
         ON(led_verd);
         OFF(led_rojo);
         Serial.println("Contraseña correcta");
@@ -135,12 +140,16 @@ void loop()
         OFF(led_verd);
         ON(led_rojo);
         Serial.println("Contraseña incorrecta");
+        ServoCerradura.write(0);
       }
       info_recibida = "";     //limpio el string
       delay(1000);
       lcdCerradura.setCursor(0,1);
       lcdCerradura.print("P.Cerrada      ");
       pos_lcd = 0;
+      ON(led_rojo);
+      OFF(led_verd);
+      ServoCerradura.write(0);
     }
   }
 
@@ -164,5 +173,5 @@ void config_HMI(void)
   lcdCerradura.setCursor(2,0);
   lcdCerradura.print("Bienvenidos");
   lcdCerradura.setCursor(0,1);
-  lcdCerradura.print("P.Cerrado      ");
+  lcdCerradura.print("P.Cerrada      ");
 }
