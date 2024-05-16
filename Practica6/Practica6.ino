@@ -8,7 +8,7 @@
    Proyecto: Practica 6
    Dev: Profe. Alejandro Lopez Navas
    Fecha: 16 de mayo
-   link de la simulacion: 
+   link de la simulacion: https://www.tinkercad.com/things/hUcRcpoP6Dt-ejemplo-practica-6
 */
 
 
