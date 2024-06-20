@@ -5,7 +5,7 @@
    Quinto electronica
    Codigo Tecnico: EB5AM / EB5AV 
    Curso: Taller de electronica digital y reparacion de computadoras I
-   Proyecto: Uso del keypad 4x4
+   Proyecto: Uso del NeoPixel
    Dev: Profe. Alejandro Lopez Navas
    Fecha: 20 de junio.
    link de la simulacion: https://www.tinkercad.com/things/3l3pZPs4Sm1-uso-del-neopixel
